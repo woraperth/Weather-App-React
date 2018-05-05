@@ -4,7 +4,8 @@ This weather app will show the current weather from different cities in Australi
 ## Features
 - Responsive layout & typography
 - Customizable list of city
-- Show current weather & weather forecast
+- Switchable Celcius / Farenheit
+- Show current weather and description & 7-days weather forecast in plot
 - Cached using local storage
 - Automatically pull the beautiful images from this city using Unsplash API
 
