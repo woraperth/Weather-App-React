@@ -36,6 +36,7 @@ class LocationInfo extends React.Component {
               <Tooltip />
               <Legend />
               <Bar dataKey="temp" name="Low - High" fill="#007a47" />
+              <CartesianGrid strokeDasharray="3 3" vertical={false} />
             </BarChart>
           </ResponsiveContainer>
         </ChartWrapper>
