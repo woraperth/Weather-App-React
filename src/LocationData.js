@@ -6,7 +6,6 @@ const location_data = [
     {
         name: 'Sydney',
         location: 'au.2000',
-        cover_img: 'sydney.jpg'
     },
     {
         name: 'Brisbane',

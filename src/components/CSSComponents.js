@@ -10,13 +10,22 @@ export const LeftHalf = styled.div`
   width: 50%;
   height: 100vh;
   background: #ccc;
+  
+  @media (max-width: 1000px) {
+    width: 100%;
+  }
 `
 
 export const RightHalf = styled.div`
   position: relative;
   width: 50%;
   height: 100vh;
-  padding: 10px;
+  padding: 0.5% 2%;
+  box-sizing: border-box;
+
+  @media (max-width: 1000px) {
+    width: 100%;
+  }
 `
 
 export const SelectorWrapper = styled.div`
@@ -31,6 +40,7 @@ export const SelectorItem = styled.div`
   color: ${props => props.active ? '#fff' : '#666'};
   border-radius: 5px;
   margin-right: 10px;
+  margin-bottom: 5px;
 
   &:hover {
       color: ${props => props.active ? '#fff' : '#007a47'};
@@ -51,6 +61,32 @@ export const FullScreenBox = styled.div`
 export const PageTitle = styled.h1`
   font-size: 90px;
   margin-top: 10px;
-  text-transform: uppercase;
-  
+  margin-bottom: 0;
+  text-transform: uppercase; 
+
+  @media (max-width: 1200px) {
+    font-size: 80px;
+  }
+
+  @media (max-width: 1000px) {
+    font-size: 60px;
+  }
+`
+
+export const Subtitle = styled.h2`
+  margin-top: 40px;
+`
+
+export const ChartWrapper = styled.div`
+  margin-right: 100px;
+`
+
+export const WeatherTemp = styled.span`
+  font-size: 60px;
+  color: #007a47;
+`
+
+export const WeatherDescr = styled.div`
+  font-size: 20px;
+  color: #666;
 `

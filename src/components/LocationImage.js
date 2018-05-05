@@ -1,19 +1,20 @@
 import React from 'react';
 import axios from 'axios';
-import Fade from 'react-fade';
 import { FullScreenBox } from './CSSComponents'
 import { API_Unsplash } from './APIURL'
 
 class LocationImage extends React.Component {
   constructor() {
     super();
-    this.state = { backgroundURL: '' };
+    this.state = {
+      backgroundURL: '',
+    };
   }
 
   render() {
-    return <Fade>
+    return <div>
       <FullScreenBox url={this.state.backgroundURL} />
-    </Fade>
+    </div>
   }
 
   componentDidMount() {
@@ -33,7 +34,6 @@ class LocationImage extends React.Component {
         // Select Random Image (from 5 images)
         let results = res.data.results
         let rand_result = results[Math.floor(Math.random() * results.length)]
-        console.log(rand_result)
         // Set State
         this.setState({ backgroundURL: rand_result.urls.regular });
       })
