@@ -3,7 +3,7 @@ import React from 'react'
 // Import components
 import LocationImage from './components/LocationImage'
 import LocationInfo from './components/LocationInfo'
-import { PageWrapper, LeftHalf, RightHalf, SelectorWrapper, SelectorItem } from './components/CSSComponents'
+import { PageWrapper, LeftHalf, RightHalf, SelectorWrapper, SelectorItem, SelectorBox } from './components/CSSComponents'
 // Import data
 import LocationData from './LocationData'
 
@@ -33,8 +33,8 @@ class App extends React.Component {
       </LeftHalf>
       <RightHalf>
         <SelectorWrapper>
-          <div>Select City: {this.generate_city_selector()}</div>
-          Select Temp Unit: {this.generate_temp_selector()}
+          <SelectorBox>{this.generate_city_selector()}</SelectorBox>
+          <SelectorBox>{this.generate_temp_selector()}</SelectorBox>
         </SelectorWrapper>
         <LocationInfo city_data={this.state.current_city} mode={this.state.weather_mode} />
       </RightHalf>

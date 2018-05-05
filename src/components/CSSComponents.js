@@ -29,6 +29,7 @@ export const RightHalf = styled.div`
 `
 
 export const SelectorWrapper = styled.div`
+  margin-bottom: 20px;
 `
 
 export const SelectorItem = styled.div`
@@ -39,7 +40,7 @@ export const SelectorItem = styled.div`
   background: ${props => props.active ? '#666' : '#fff'};
   color: ${props => props.active ? '#fff' : '#666'};
   border-radius: 5px;
-  margin-right: 10px;
+  margin-right: 15px;
   margin-bottom: 5px;
 
   &:hover {
@@ -75,6 +76,7 @@ export const PageTitle = styled.h1`
 
 export const Subtitle = styled.h2`
   margin-top: 40px;
+  margin-bottom: 10px;
 `
 
 export const ChartWrapper = styled.div`
@@ -89,4 +91,21 @@ export const WeatherTemp = styled.span`
 export const WeatherDescr = styled.div`
   font-size: 20px;
   color: #666;
+`
+
+export const SelectorBox = styled.div`
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 5px;
+`
+
+export const WeatherIcon = styled.div`
+  width: 48px;
+  height: 48px;
+  text-align: center;
+  background: #e1f7ec;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
 `

@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-import { PageTitle, Subtitle, ChartWrapper, WeatherTemp, WeatherDescr } from './CSSComponents'
+import moment from 'moment';
+import { PageTitle, Subtitle, ChartWrapper, WeatherTemp, WeatherDescr, WeatherIcon } from './CSSComponents'
 import { API_Weather_Current, API_Weather_Forecast } from './APIURL'
 import { ResponsiveContainer, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Bar } from 'recharts'
 import WeatherDesc from './WeatherDesc'
@@ -21,7 +22,7 @@ class LocationInfo extends React.Component {
         <Subtitle>Current Weather:</Subtitle>
         <div>
           <WeatherDescr>{this.state.currentWeather.desc}</WeatherDescr>
-          <img src={this.state.currentWeather ? process.env.PUBLIC_URL + '/weather-icons/' + this.state.currentWeather.img : ''} />
+          <WeatherIcon><img src={this.state.currentWeather ? process.env.PUBLIC_URL + '/weather-icons/' + this.state.currentWeather.img : ''} /></WeatherIcon>
           <WeatherTemp>{this.state.currentWeather.temp}° {this.props.mode.toUpperCase()}</WeatherTemp>
         </div>
       </div>
@@ -34,7 +35,7 @@ class LocationInfo extends React.Component {
               <YAxis />
               <Tooltip />
               <Legend />
-              <Bar dataKey="temp" name="Temperature" fill="#007a47" />
+              <Bar dataKey="temp" name="Low - High" fill="#007a47" />
             </BarChart>
           </ResponsiveContainer>
         </ChartWrapper>
@@ -80,7 +81,7 @@ class LocationInfo extends React.Component {
         for(var i = 0; i < forecast_data.length; i++) {
           let forecast_item = forecast_data[i]
           forecast_ary.push( {
-            date: forecast_item.date,
+            date: moment(forecast_item.date, "DD/MM/YYYY").format('ddd D MMM'),
             temp: [ forecast_item['temp_min_' + this.props.mode], forecast_item['temp_max_' + this.props.mode] ]
           } )
         }
